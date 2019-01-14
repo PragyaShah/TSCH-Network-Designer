@@ -1,0 +1,35 @@
+{
+"nodes": [
+	{
+    	"id": 1, 
+    	"pos": [20, 30], 
+    	"type": "BS",
+    	"tx_pow": -3, 
+    	"rx_sens": -90
+    },
+	
+	{
+    	"id": 2, 
+    	"pos": [2, 3],
+    	"type": "S",
+    	"tx_pow": -3, 
+    	"rx_sens": -90
+    },
+    
+    {
+    	"id": 3, 
+        "pos": [5, 15], 
+        "type": "R",
+    	"tx_pow": -3, 
+    	"rx_sens": -90
+    },
+    
+    {
+    	"id": 4, 
+    	"pos": [44, 10],
+    	"type": "R", 
+    	"tx_pow": -3, 
+    	"rx_sens": -90
+    }
+]
+}
