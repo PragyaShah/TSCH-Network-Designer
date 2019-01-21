@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd"><key attr.name="weight" attr.type="double" for="edge" id="d6"/>
+<key attr.name="rx_sens" attr.type="long" for="node" id="d5"/>
+<key attr.name="tx_pow" attr.type="long" for="node" id="d4"/>
+<key attr.name="type" attr.type="string" for="node" id="d3"/>
+<key attr.name="posy" attr.type="long" for="node" id="d2"/>
+<key attr.name="posx" attr.type="double" for="node" id="d1"/>
+<key attr.name="id" attr.type="long" for="node" id="d0"/>
+<graph edgedefault="undirected"><node id="1">
+  <data key="d0">1</data>
+  <data key="d1">24.5</data>
+  <data key="d2">30</data>
+  <data key="d3">BS</data>
+  <data key="d4">-3</data>
+  <data key="d5">-90</data>
+</node>
+<node id="2">
+  <data key="d0">2</data>
+  <data key="d7">2</data>
+  <data key="d2">3</data>
+  <data key="d3">S</data>
+  <data key="d4">-3</data>
+  <data key="d5">-90</data>
+</node>
+<node id="3">
+  <data key="d0">3</data>
+  <data key="d7">5</data>
+  <data key="d2">15</data>
+  <data key="d3">R</data>
+  <data key="d4">-3</data>
+  <data key="d5">-90</data>
+</node>
+<node id="4">
+  <data key="d0">4</data>
+  <data key="d7">44</data>
+  <data key="d2">10</data>
+  <data key="d3">S</data>
+  <data key="d4">-3</data>
+  <data key="d5">-90</data>
+</node>
+<node id="5">
+  <data key="d0">5</data>
+  <data key="d7">22</data>
+  <data key="d2">12</data>
+  <data key="d3">R</data>
+  <data key="d4">-3</data>
+  <data key="d5">-90</data>
+</node>
+<edge source="1" target="5">
+  <data key="d6">18.172781845386247</data>
+</edge>
+<edge source="2" target="3">
+  <data key="d8">12.36931687685298</data>
+</edge>
+<edge source="3" target="5">
+  <data key="d8">17.26267650163207</data>
+</edge>
+</graph></graphml>
