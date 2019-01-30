@@ -1,0 +1,167 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd"><key attr.name="weight" attr.type="long" for="edge" id="d6"/>
+<key attr.name="rx_sens" attr.type="long" for="node" id="d5"/>
+<key attr.name="tx_pow" attr.type="long" for="node" id="d4"/>
+<key attr.name="type" attr.type="string" for="node" id="d3"/>
+<key attr.name="posy" attr.type="long" for="node" id="d2"/>
+<key attr.name="posx" attr.type="long" for="node" id="d1"/>
+<key attr.name="id" attr.type="long" for="node" id="d0"/>
+<graph edgedefault="undirected"><node id="1">
+  <data key="d0">1</data>
+  <data key="d1">15</data>
+  <data key="d2">15</data>
+  <data key="d3">BS</data>
+  <data key="d4">-3</data>
+  <data key="d5">-90</data>
+</node>
+<node id="2">
+  <data key="d0">2</data>
+  <data key="d1">0</data>
+  <data key="d2">0</data>
+  <data key="d3">S</data>
+  <data key="d4">-3</data>
+  <data key="d5">-90</data>
+</node>
+<node id="3">
+  <data key="d0">3</data>
+  <data key="d1">0</data>
+  <data key="d2">30</data>
+  <data key="d3">S</data>
+  <data key="d4">-3</data>
+  <data key="d5">-90</data>
+</node>
+<node id="4">
+  <data key="d0">4</data>
+  <data key="d1">30</data>
+  <data key="d2">0</data>
+  <data key="d3">S</data>
+  <data key="d4">-3</data>
+  <data key="d5">-90</data>
+</node>
+<node id="5">
+  <data key="d0">5</data>
+  <data key="d1">30</data>
+  <data key="d2">30</data>
+  <data key="d3">S</data>
+  <data key="d4">-3</data>
+  <data key="d5">-90</data>
+</node>
+<node id="6">
+  <data key="d0">6</data>
+  <data key="d1">10</data>
+  <data key="d2">0</data>
+  <data key="d3">R</data>
+  <data key="d4">-3</data>
+  <data key="d5">-90</data>
+</node>
+<node id="7">
+  <data key="d0">7</data>
+  <data key="d1">20</data>
+  <data key="d2">0</data>
+  <data key="d3">R</data>
+  <data key="d4">-3</data>
+  <data key="d5">-90</data>
+</node>
+<node id="8">
+  <data key="d0">8</data>
+  <data key="d1">10</data>
+  <data key="d2">10</data>
+  <data key="d3">R</data>
+  <data key="d4">-3</data>
+  <data key="d5">-90</data>
+</node>
+<node id="9">
+  <data key="d0">9</data>
+  <data key="d1">20</data>
+  <data key="d2">10</data>
+  <data key="d3">R</data>
+  <data key="d4">-3</data>
+  <data key="d5">-90</data>
+</node>
+<node id="10">
+  <data key="d0">10</data>
+  <data key="d1">10</data>
+  <data key="d2">20</data>
+  <data key="d3">R</data>
+  <data key="d4">-3</data>
+  <data key="d5">-90</data>
+</node>
+<node id="11">
+  <data key="d0">11</data>
+  <data key="d1">20</data>
+  <data key="d2">20</data>
+  <data key="d3">R</data>
+  <data key="d4">-3</data>
+  <data key="d5">-90</data>
+</node>
+<node id="12">
+  <data key="d0">12</data>
+  <data key="d1">10</data>
+  <data key="d2">30</data>
+  <data key="d3">R</data>
+  <data key="d4">-3</data>
+  <data key="d5">-90</data>
+</node>
+<node id="13">
+  <data key="d0">13</data>
+  <data key="d1">20</data>
+  <data key="d2">30</data>
+  <data key="d3">R</data>
+  <data key="d4">-3</data>
+  <data key="d5">-90</data>
+</node>
+<edge source="1" target="8">
+  <data key="d6">1</data>
+</edge>
+<edge source="1" target="9">
+  <data key="d6">1</data>
+</edge>
+<edge source="1" target="10">
+  <data key="d6">1</data>
+</edge>
+<edge source="1" target="11">
+  <data key="d6">1</data>
+</edge>
+<edge source="2" target="6">
+  <data key="d6">1</data>
+</edge>
+<edge source="3" target="12">
+  <data key="d6">1</data>
+</edge>
+<edge source="4" target="7">
+  <data key="d6">1</data>
+</edge>
+<edge source="5" target="13">
+  <data key="d6">1</data>
+</edge>
+<edge source="6" target="7">
+  <data key="d6">2</data>
+</edge>
+<edge source="6" target="8">
+  <data key="d6">2</data>
+</edge>
+<edge source="7" target="9">
+  <data key="d6">2</data>
+</edge>
+<edge source="8" target="9">
+  <data key="d6">2</data>
+</edge>
+<edge source="8" target="10">
+  <data key="d6">2</data>
+</edge>
+<edge source="9" target="11">
+  <data key="d6">2</data>
+</edge>
+<edge source="10" target="11">
+  <data key="d6">2</data>
+</edge>
+<edge source="10" target="12">
+  <data key="d6">2</data>
+</edge>
+<edge source="11" target="13">
+  <data key="d6">2</data>
+</edge>
+<edge source="12" target="13">
+  <data key="d6">2</data>
+</edge>
+</graph></graphml>
