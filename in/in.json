@@ -1,7 +1,14 @@
 {
 "nodes": [
 
-    
+    {
+    	"id": 1, 
+    	"posx": 24.5,
+    	"posy": 30,    	 
+    	"type": "BS",
+    	"tx_pow": -3, 
+    	"rx_sens": -90
+    },
 	
 	{
     	"id": 2, 
@@ -37,15 +44,8 @@
     	"type": "R", 
     	"tx_pow": -3, 
     	"rx_sens": -90
-    },
-    
-    {
-    	"id": 1, 
-    	"posx": 24.5,
-    	"posy": 30,    	 
-    	"type": "BS",
-    	"tx_pow": -3, 
-    	"rx_sens": -90
     }
+    
+    
 ]
 }

@@ -4,11 +4,19 @@
 <key attr.name="tx_pow" attr.type="long" for="node" id="d4"/>
 <key attr.name="type" attr.type="string" for="node" id="d3"/>
 <key attr.name="posy" attr.type="long" for="node" id="d2"/>
-<key attr.name="posx" attr.type="long" for="node" id="d1"/>
+<key attr.name="posx" attr.type="double" for="node" id="d1"/>
 <key attr.name="id" attr.type="long" for="node" id="d0"/>
-<graph edgedefault="undirected"><node id="2">
+<graph edgedefault="undirected"><node id="1">
+  <data key="d0">1</data>
+  <data key="d1">24.5</data>
+  <data key="d2">30</data>
+  <data key="d3">BS</data>
+  <data key="d4">-3</data>
+  <data key="d5">-90</data>
+</node>
+<node id="2">
   <data key="d0">2</data>
-  <data key="d1">2</data>
+  <data key="d7">2</data>
   <data key="d2">3</data>
   <data key="d3">S</data>
   <data key="d4">-3</data>
@@ -16,7 +24,7 @@
 </node>
 <node id="3">
   <data key="d0">3</data>
-  <data key="d1">5</data>
+  <data key="d7">5</data>
   <data key="d2">15</data>
   <data key="d3">R</data>
   <data key="d4">-3</data>
@@ -24,7 +32,7 @@
 </node>
 <node id="4">
   <data key="d0">4</data>
-  <data key="d1">44</data>
+  <data key="d7">44</data>
   <data key="d2">10</data>
   <data key="d3">S</data>
   <data key="d4">-3</data>
@@ -32,20 +40,18 @@
 </node>
 <node id="5">
   <data key="d0">5</data>
-  <data key="d1">22</data>
+  <data key="d7">22</data>
   <data key="d2">12</data>
   <data key="d3">R</data>
   <data key="d4">-3</data>
   <data key="d5">-90</data>
 </node>
-<node id="1">
-  <data key="d0">1</data>
-  <data key="d7">24.5</data>
-  <data key="d2">30</data>
-  <data key="d3">BS</data>
-  <data key="d4">-3</data>
-  <data key="d5">-90</data>
-</node>
+<edge source="1" target="3">
+  <data key="d6">1</data>
+</edge>
+<edge source="1" target="5">
+  <data key="d6">1</data>
+</edge>
 <edge source="2" target="3">
   <data key="d6">1</data>
 </edge>
@@ -55,13 +61,7 @@
 <edge source="3" target="5">
   <data key="d6">2</data>
 </edge>
-<edge source="3" target="1">
-  <data key="d6">1</data>
-</edge>
 <edge source="4" target="5">
-  <data key="d6">1</data>
-</edge>
-<edge source="5" target="1">
   <data key="d6">1</data>
 </edge>
 </graph></graphml>

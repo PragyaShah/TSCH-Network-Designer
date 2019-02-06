@@ -91,6 +91,7 @@ def relay_placement(input_file_path):
                 break
             steiner.remove_nodes_from(bad_leaf)
         plt.figure(4)
-        pj.draw_graph(steiner, out_file_path+"_steiner")
+        pj.draw_graph(steiner, out_file_path+"_RNPC")
+        pj.store_pickle(steiner, out_file_path+"RNPC_pickle")
     else:
         print ("Terminals of the given graph do not lie in a single sonnected component. Thus it cannot be processed further")
