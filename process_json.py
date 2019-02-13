@@ -71,7 +71,20 @@ def edge_calc(graph, limit, param = 'distance'):
     return (valid_edges)
 
 def draw_graph(graph, filename="graph.png"):
-    nx.draw(graph, pos= get_pos(graph), with_labels = True)  
+    type_map=nx.get_node_attributes(graph, 'type')
+    colour_map=[]
+    for n in type_map: 
+        if type_map[n]=='R':
+            colour_map.append('yellow')
+        elif type_map[n]=='S':
+            colour_map.append('green')
+        elif type_map[n]=='BS':
+            colour_map.append('blue')
+        else:
+            colour_map.append('red')
+    #print (colour_map)
+    nx.draw(graph, pos= get_pos(graph), with_labels = True, node_color = colour_map)  
+    
     bbox = {'ec':[1,1,1,0], 'fc':[0,1,1,0]}  # hack to label edges over line (rather than breaking up line)
     edge_labels = nx.get_edge_attributes(graph, 'weight')
     nx.draw_networkx_edge_labels(graph, pos=get_pos(graph), edge_labels=edge_labels, bbox=bbox)
@@ -79,7 +92,7 @@ def draw_graph(graph, filename="graph.png"):
     #plt.axis('on')
     #plt.grid('on')
     plt.savefig(filename)
-    #plt.show()
+    plt.show()
     
 def process_json(input_file_path, limit, param = 'distance'):
     file_dir = os.path.dirname(input_file_path)

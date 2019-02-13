@@ -1,0 +1,492 @@
+{
+    "nodes": [
+        {
+            "id": 1,
+            "posx": 14.7,
+            "posy": 11.5,
+            "type": "BS",
+            "tx_pow": -3,
+            "rx_sens": -90
+        },
+        {
+            "id": 2,
+            "posx": 44.8,
+            "posy": 31.4,
+            "type": "S",
+            "tx_pow": -3,
+            "rx_sens": -90
+        },
+        {
+            "id": 3,
+            "posx": 16.4,
+            "posy": 19.6,
+            "type": "S",
+            "tx_pow": -3,
+            "rx_sens": -90
+        },
+        {
+            "id": 4,
+            "posx": 33.5,
+            "posy": 19.9,
+            "type": "S",
+            "tx_pow": -3,
+            "rx_sens": -90
+        },
+        {
+            "id": 5,
+            "posx": 42.5,
+            "posy": 4.7,
+            "type": "S",
+            "tx_pow": -3,
+            "rx_sens": -90
+        },
+        {
+            "id": 6,
+            "posx": 4.9,
+            "posy": 20.4,
+            "type": "S",
+            "tx_pow": -3,
+            "rx_sens": -90
+        },
+        {
+            "id": 7,
+            "posx": 17.0,
+            "posy": 17.2,
+            "type": "S",
+            "tx_pow": -3,
+            "rx_sens": -90
+        },
+        {
+            "id": 8,
+            "posx": 17.2,
+            "posy": 43.5,
+            "type": "S",
+            "tx_pow": -3,
+            "rx_sens": -90
+        },
+        {
+            "id": 9,
+            "posx": 23.4,
+            "posy": 32.8,
+            "type": "S",
+            "tx_pow": -3,
+            "rx_sens": -90
+        },
+        {
+            "id": 10,
+            "posx": 3.6,
+            "posy": 30.5,
+            "type": "S",
+            "tx_pow": -3,
+            "rx_sens": -90
+        },
+        {
+            "id": 11,
+            "posx": 20.7,
+            "posy": 5.5,
+            "type": "S",
+            "tx_pow": -3,
+            "rx_sens": -90
+        },
+        {
+            "id": 12,
+            "posx": 23.5,
+            "posy": 11.3,
+            "type": "S",
+            "tx_pow": -3,
+            "rx_sens": -90
+        },
+        {
+            "id": 13,
+            "posx": 45.1,
+            "posy": 1.0,
+            "type": "S",
+            "tx_pow": -3,
+            "rx_sens": -90
+        },
+        {
+            "id": 14,
+            "posx": 42.1,
+            "posy": 42.4,
+            "type": "S",
+            "tx_pow": -3,
+            "rx_sens": -90
+        },
+        {
+            "id": 15,
+            "posx": 0.1,
+            "posy": 35.6,
+            "type": "S",
+            "tx_pow": -3,
+            "rx_sens": -90
+        },
+        {
+            "id": 16,
+            "posx": 45.5,
+            "posy": 0.8,
+            "type": "S",
+            "tx_pow": -3,
+            "rx_sens": -90
+        },
+        {
+            "id": 17,
+            "posx": 48.0,
+            "posy": 20.2,
+            "type": "S",
+            "tx_pow": -3,
+            "rx_sens": -90
+        },
+        {
+            "id": 18,
+            "posx": 24.0,
+            "posy": 21.1,
+            "type": "S",
+            "tx_pow": -3,
+            "rx_sens": -90
+        },
+        {
+            "id": 19,
+            "posx": 47.8,
+            "posy": 44.0,
+            "type": "S",
+            "tx_pow": -3,
+            "rx_sens": -90
+        },
+        {
+            "id": 20,
+            "posx": 27.1,
+            "posy": 29.5,
+            "type": "S",
+            "tx_pow": -3,
+            "rx_sens": -90
+        },
+        {
+            "id": 21,
+            "posx": 2.1,
+            "posy": 20.2,
+            "type": "S",
+            "tx_pow": -3,
+            "rx_sens": -90
+        },
+        {
+            "id": 22,
+            "posx": 3.3,
+            "posy": 26.0,
+            "type": "R",
+            "tx_pow": -3,
+            "rx_sens": -90
+        },
+        {
+            "id": 23,
+            "posx": 14.2,
+            "posy": 34.7,
+            "type": "R",
+            "tx_pow": -3,
+            "rx_sens": -90
+        },
+        {
+            "id": 24,
+            "posx": 10.5,
+            "posy": 24.2,
+            "type": "R",
+            "tx_pow": -3,
+            "rx_sens": -90
+        },
+        {
+            "id": 25,
+            "posx": 12.4,
+            "posy": 37.6,
+            "type": "R",
+            "tx_pow": -3,
+            "rx_sens": -90
+        },
+        {
+            "id": 26,
+            "posx": 20.8,
+            "posy": 44.0,
+            "type": "R",
+            "tx_pow": -3,
+            "rx_sens": -90
+        },
+        {
+            "id": 27,
+            "posx": 9.9,
+            "posy": 45.8,
+            "type": "R",
+            "tx_pow": -3,
+            "rx_sens": -90
+        },
+        {
+            "id": 28,
+            "posx": 49.1,
+            "posy": 48.9,
+            "type": "R",
+            "tx_pow": -3,
+            "rx_sens": -90
+        },
+        {
+            "id": 29,
+            "posx": 6.6,
+            "posy": 27.0,
+            "type": "R",
+            "tx_pow": -3,
+            "rx_sens": -90
+        },
+        {
+            "id": 30,
+            "posx": 43.5,
+            "posy": 40.9,
+            "type": "R",
+            "tx_pow": -3,
+            "rx_sens": -90
+        },
+        {
+            "id": 31,
+            "posx": 34.2,
+            "posy": 47.8,
+            "type": "R",
+            "tx_pow": -3,
+            "rx_sens": -90
+        },
+        {
+            "id": 32,
+            "posx": 14.3,
+            "posy": 6.6,
+            "type": "R",
+            "tx_pow": -3,
+            "rx_sens": -90
+        },
+        {
+            "id": 33,
+            "posx": 40.7,
+            "posy": 10.4,
+            "type": "R",
+            "tx_pow": -3,
+            "rx_sens": -90
+        },
+        {
+            "id": 34,
+            "posx": 4.3,
+            "posy": 0.9,
+            "type": "R",
+            "tx_pow": -3,
+            "rx_sens": -90
+        },
+        {
+            "id": 35,
+            "posx": 49.6,
+            "posy": 30.3,
+            "type": "R",
+            "tx_pow": -3,
+            "rx_sens": -90
+        },
+        {
+            "id": 36,
+            "posx": 29.9,
+            "posy": 42.8,
+            "type": "R",
+            "tx_pow": -3,
+            "rx_sens": -90
+        },
+        {
+            "id": 37,
+            "posx": 15.8,
+            "posy": 5.1,
+            "type": "R",
+            "tx_pow": -3,
+            "rx_sens": -90
+        },
+        {
+            "id": 38,
+            "posx": 27.8,
+            "posy": 3.0,
+            "type": "R",
+            "tx_pow": -3,
+            "rx_sens": -90
+        },
+        {
+            "id": 39,
+            "posx": 20.6,
+            "posy": 48.5,
+            "type": "R",
+            "tx_pow": -3,
+            "rx_sens": -90
+        },
+        {
+            "id": 40,
+            "posx": 41.7,
+            "posy": 3.2,
+            "type": "R",
+            "tx_pow": -3,
+            "rx_sens": -90
+        },
+        {
+            "id": 41,
+            "posx": 37.5,
+            "posy": 2.8,
+            "type": "R",
+            "tx_pow": -3,
+            "rx_sens": -90
+        },
+        {
+            "id": 42,
+            "posx": 6.1,
+            "posy": 29.7,
+            "type": "R",
+            "tx_pow": -3,
+            "rx_sens": -90
+        },
+        {
+            "id": 43,
+            "posx": 14.7,
+            "posy": 29.0,
+            "type": "R",
+            "tx_pow": -3,
+            "rx_sens": -90
+        },
+        {
+            "id": 44,
+            "posx": 18.0,
+            "posy": 48.0,
+            "type": "R",
+            "tx_pow": -3,
+            "rx_sens": -90
+        },
+        {
+            "id": 45,
+            "posx": 24.2,
+            "posy": 40.4,
+            "type": "R",
+            "tx_pow": -3,
+            "rx_sens": -90
+        },
+        {
+            "id": 46,
+            "posx": 14.0,
+            "posy": 9.8,
+            "type": "R",
+            "tx_pow": -3,
+            "rx_sens": -90
+        },
+        {
+            "id": 47,
+            "posx": 42.8,
+            "posy": 12.9,
+            "type": "R",
+            "tx_pow": -3,
+            "rx_sens": -90
+        },
+        {
+            "id": 48,
+            "posx": 46.7,
+            "posy": 10.7,
+            "type": "R",
+            "tx_pow": -3,
+            "rx_sens": -90
+        },
+        {
+            "id": 49,
+            "posx": 45.8,
+            "posy": 16.5,
+            "type": "R",
+            "tx_pow": -3,
+            "rx_sens": -90
+        },
+        {
+            "id": 50,
+            "posx": 45.2,
+            "posy": 15.3,
+            "type": "R",
+            "tx_pow": -3,
+            "rx_sens": -90
+        },
+        {
+            "id": 51,
+            "posx": 17.7,
+            "posy": 46.4,
+            "type": "R",
+            "tx_pow": -3,
+            "rx_sens": -90
+        },
+        {
+            "id": 52,
+            "posx": 41.4,
+            "posy": 25.9,
+            "type": "R",
+            "tx_pow": -3,
+            "rx_sens": -90
+        },
+        {
+            "id": 53,
+            "posx": 39.7,
+            "posy": 46.1,
+            "type": "R",
+            "tx_pow": -3,
+            "rx_sens": -90
+        },
+        {
+            "id": 54,
+            "posx": 0.5,
+            "posy": 7.4,
+            "type": "R",
+            "tx_pow": -3,
+            "rx_sens": -90
+        },
+        {
+            "id": 55,
+            "posx": 18.2,
+            "posy": 28.8,
+            "type": "R",
+            "tx_pow": -3,
+            "rx_sens": -90
+        },
+        {
+            "id": 56,
+            "posx": 5.9,
+            "posy": 41.6,
+            "type": "R",
+            "tx_pow": -3,
+            "rx_sens": -90
+        },
+        {
+            "id": 57,
+            "posx": 23.2,
+            "posy": 5.2,
+            "type": "R",
+            "tx_pow": -3,
+            "rx_sens": -90
+        },
+        {
+            "id": 58,
+            "posx": 5.0,
+            "posy": 40.1,
+            "type": "R",
+            "tx_pow": -3,
+            "rx_sens": -90
+        },
+        {
+            "id": 59,
+            "posx": 19.8,
+            "posy": 14.8,
+            "type": "R",
+            "tx_pow": -3,
+            "rx_sens": -90
+        },
+        {
+            "id": 60,
+            "posx": 6.2,
+            "posy": 43.5,
+            "type": "R",
+            "tx_pow": -3,
+            "rx_sens": -90
+        },
+        {
+            "id": 61,
+            "posx": 37.5,
+            "posy": 3.1,
+            "type": "R",
+            "tx_pow": -3,
+            "rx_sens": -90
+        }
+    ]
+}

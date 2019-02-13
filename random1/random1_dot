@@ -1,0 +1,17 @@
+strict graph  {
+1 [id=1, posx="9.4", posy="5.0", type=BS, tx_pow="-3", rx_sens="-90", pos="9.400000,5.000000!"];
+2 [id=2, posx="6.3", posy="6.7", type=S, tx_pow="-3", rx_sens="-90", pos="6.300000,6.700000!"];
+3 [id=3, posx="4.1", posy="9.8", type=S, tx_pow="-3", rx_sens="-90", pos="4.100000,9.800000!"];
+4 [id=4, posx="5.9", posy="8.2", type=R, tx_pow="-3", rx_sens="-90", pos="5.900000,8.200000!"];
+5 [id=5, posx="16.0", posy="3.3", type=R, tx_pow="-3", rx_sens="-90", pos="16.000000,3.300000!"];
+6 [id=6, posx="3.1", posy="6.2", type=R, tx_pow="-3", rx_sens="-90", pos="3.100000,6.200000!"];
+7 [id=7, posx="1.7", posy="1.4", type=R, tx_pow="-3", rx_sens="-90", pos="1.700000,1.400000!"];
+1 -- 2  [weight=0];
+1 -- 4  [weight=1];
+2 -- 3  [weight=0];
+2 -- 4  [weight=1];
+2 -- 6  [weight=1];
+3 -- 4  [weight=1];
+3 -- 6  [weight=1];
+4 -- 6  [weight=2];
+}
