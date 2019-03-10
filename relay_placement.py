@@ -8,7 +8,7 @@ Created on Tue Jan 15 15:37:26 2019
 
 import os
 import networkx as nx
-import pickle 
+
 import pdb
 from itertools import combinations
 import process_json as pj
@@ -21,14 +21,7 @@ logging.basicConfig(level=logging.DEBUG, format=' %(asctime)s - %(levelname)s - 
 logging.disable(logging.CRITICAL)
 
 
-def load_pickle(filename='pickle'): 
-    # for reading also binary mode is important 
-    rdfile = open(filename, 'rb')  
-    logging.debug('Reading graph from pickle')  
-    graph = pickle.load(rdfile) 
-    logging.debug('Finished Reading')  
-    #pj.draw_graph(graph, "out_graph")
-    return graph
+
     
 def make_subgraph(graph):
     main_nodes = []
@@ -56,7 +49,7 @@ def relay_placement(input_file_path):
     out_file_path = os.path.join(file_dir, file_name)
     
     if file_type == 'pickle':
-        G = load_pickle(input_file_path)
+        G = pj.load_pickle(input_file_path)
         
     subg = make_subgraph(G)
     
@@ -67,7 +60,7 @@ def relay_placement(input_file_path):
     
     print (nx.is_biconnected(subg))
     if nx.is_connected(subg):
-        mst = nx.minimum_spanning_tree(subg, 1)
+        mst = nx.minimum_spanning_tree(subg, weight="weight")
         #print (T1.edges(data=True))
         expand_mst = nx.Graph()
         plt.figure(2)
@@ -76,7 +69,7 @@ def relay_placement(input_file_path):
         
         #expanding the MST
         for e in mst.edges():
-            temp = G.subgraph(nx.shortest_path(G, e[0], e[1]))
+            temp = G.subgraph(nx.shortest_path(G, e[0], e[1], weight="weight"))
             expand_mst.add_nodes_from(temp.nodes(data=True))
             expand_mst.add_edges_from(temp.edges(data=True))
         plt.figure(3)

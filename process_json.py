@@ -33,6 +33,15 @@ def store_pickle(graph, filename='pickle'):
     logging.debug('Finished Writing')                     
     wrfile.close() 
     
+def load_pickle(filename='pickle'): 
+    # for reading also binary mode is important 
+    rdfile = open(filename, 'rb')  
+    logging.debug('Reading graph from pickle')  
+    graph = pickle.load(rdfile) 
+    logging.debug('Finished Reading')  
+    #pj.draw_graph(graph, "out_graph")
+    return graph
+
 def make_graphml(graph, filename="gml"):
     nx.write_graphml(graph, filename)
     logging.debug('Finished making graphml')
@@ -65,12 +74,22 @@ def edge_calc(graph, limit, param = 'distance'):
             logging.debug(str(i)+' '+str(d))
             if d<=limit:
                 weight = 0
-                if n_type[i[0]]=='R': weight+=1
-                if n_type[i[1]]=='R': weight+=1
+# =============================OLD PROPOSAL for weights================================================
+#                if n_type[i[0]]=='R': weight+=1
+#                if n_type[i[1]]=='R': weight+=1
+# =============================================================================
+                
+        #my proposal ---------------------------------------
+                if n_type[i[0]]=='S': weight+=1
+                elif n_type[i[0]]=='R': weight+=2
+                if n_type[i[1]]=='S': weight+=1
+                elif n_type[i[1]]=='R': weight+=2
+        #---------------------------------------------------
                 valid_edges.append(i+(weight,))
     return (valid_edges)
 
 def draw_graph(graph, filename="graph.png"):
+    plt.clf()
     type_map=nx.get_node_attributes(graph, 'type')
     colour_map=[]
     for n in type_map: 

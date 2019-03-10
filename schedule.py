@@ -6,7 +6,7 @@ Created on Wed Jan 30 16:08:46 2019
 @author: pragya
 """
 
-import relay_placement as rp
+
 import os
 import networkx as nx
 import process_json as pj
@@ -15,7 +15,7 @@ def initiate(RNPC):
     for node in RNPC.nodes(data=True):
         if node[1]['type']=='S':
             RNPC.nodes[node[0]]['Bmsg']=True
-    print("initialized")
+    
             
 def scheduling(input_file_path):
     file_dir = os.path.dirname(input_file_path)
@@ -24,7 +24,7 @@ def scheduling(input_file_path):
     out_file_path = os.path.join(file_dir, file_name)
     
     if file_type == 'pickle':
-        RNPC = rp.load_pickle(input_file_path)
+        RNPC = pj.load_pickle(input_file_path)
         
     #print (str(list(RNPC.nodes(data=True))))
     #print (str(list(RNPC.edges(data=True))))
@@ -60,14 +60,15 @@ def scheduling(input_file_path):
     qi = max(tstree_qcount[tsroot] for tsroot in tstree_qcount )
     l_bound = max(n, qi)
     #l_bound = n
-    print(dfs_nodes)
-    print (tstree_qcount)
-    print (qi)
-    print (l_bound)
+    
+    f = open(out_file_path+ '_schedule.txt','w')
+    
+    
     for i in range(5):
         initiate(RNPC)
+        f.write("initialized")
         for l in range(l_bound):
-            print ('--------------------'+str(l))
+            f.write('\n--------------------'+str(l)+'\n')
             for v in bfs_nodes:
                 if (RNPC.nodes[v]['Rfree'] and (not RNPC.nodes[v]['Bmsg'])) or RNPC.nodes[v]['type']=='BS':
                     full_child = []
@@ -81,7 +82,7 @@ def scheduling(input_file_path):
                         RNPC.nodes[v]['Rfree']=False
                         RNPC.nodes[full_child[0]]['Bmsg']=False
                         RNPC.nodes[full_child[0]]['Rfree']=False
-                        print (str(full_child[0])+'->'+str(v))
+                        f.write(str(full_child[0])+'->'+str(v)+' ')
                     else:
                         max_msg = 0
                         child = full_child[0]
@@ -104,12 +105,20 @@ def scheduling(input_file_path):
                         RNPC.nodes[v]['Rfree']=False
                         RNPC.nodes[child]['Bmsg']=False
                         RNPC.nodes[child]['Rfree']=False
-                        print (str(child)+'->'+str(v))
+                        f.write(str(child)+'->'+str(v)+' ')
                         
             for node in RNPC.nodes(data=True):
                 RNPC.nodes[node[0]]['Rfree']=True
                 
+    f.close()
+
     
+    print(bfs_nodes)
+    print(dfs_nodes)
+    print (tstree_qcount)
+    print (qi)
+    print (l_bound)
+    print (root)
     #print (str(list(RNPC.nodes(data='type'))))
     #print (str(list(RNPC.edges(data=True))))
     
