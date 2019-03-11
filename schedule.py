@@ -15,13 +15,16 @@ def initiate(RNPC):
     for node in RNPC.nodes(data=True):
         if node[1]['type']=='S':
             RNPC.nodes[node[0]]['Bmsg']=True
+            RNPC.nodes[node[0]]['MsgCount']+=1
+            if RNPC.nodes[node[0]]['MsgCount']>2:
+                print ('WARNING at node ' + str(RNPC.nodes[node[0]]['id'])+' no of msg = '+str(RNPC.nodes[node[0]]['MsgCount']))
     
-            
 def scheduling(input_file_path):
     file_dir = os.path.dirname(input_file_path)
     file = os.path.basename(input_file_path)
     file_name, file_type = file.split('_')
     out_file_path = os.path.join(file_dir, file_name)
+    test_path = os.path.join(file_dir, 'steps', 'sched_')
     
     if file_type == 'pickle':
         RNPC = pj.load_pickle(input_file_path)
@@ -33,10 +36,15 @@ def scheduling(input_file_path):
         RNPC.add_node(node[0], Rfree = True, Bmsg = False)
         if node[1]['type']=='S':
             RNPC.nodes[node[0]]['Bmsg']=True
+            RNPC.nodes[node[0]]['MsgCount']=0
+            
+    for edge in RNPC.edges(data=True):
+        RNPC.add_edge(edge[0], edge[1], color = 'black', width = 1)
             
     root = None
     n=0
-    pj.draw_graph(RNPC, out_file_path+'_graph')
+    pj.draw_schedule(RNPC, test_path+str(0))
+
     for node, n_type in RNPC.nodes(data='type'):
         if n_type == 'BS':
             root = node
@@ -62,13 +70,14 @@ def scheduling(input_file_path):
     #l_bound = n
     
     f = open(out_file_path+ '_schedule.txt','w')
-    
+    out_graph = nx.Graph()
     
     for i in range(5):
         initiate(RNPC)
         f.write("initialized")
         for l in range(l_bound):
             f.write('\n--------------------'+str(l)+'\n')
+            out_graph.add_nodes_from(RNPC.nodes(data=True))
             for v in bfs_nodes:
                 if (RNPC.nodes[v]['Rfree'] and (not RNPC.nodes[v]['Bmsg'])) or RNPC.nodes[v]['type']=='BS':
                     full_child = []
@@ -79,10 +88,20 @@ def scheduling(input_file_path):
                         continue
                     elif len(full_child) ==1:
                         RNPC.nodes[v]['Bmsg']=True
+                        if RNPC.nodes[v]['type']=='S':
+                            RNPC.nodes[v]['MsgCount']+=1
                         RNPC.nodes[v]['Rfree']=False
-                        RNPC.nodes[full_child[0]]['Bmsg']=False
                         RNPC.nodes[full_child[0]]['Rfree']=False
+                        if RNPC.nodes[full_child[0]]['type']=='S':
+                            RNPC.nodes[full_child[0]]['MsgCount']-=1
+                            if RNPC.nodes[full_child[0]]['MsgCount']== 0:
+                                RNPC.nodes[full_child[0]]['Bmsg']=False
+                        else:
+                            RNPC.nodes[full_child[0]]['Bmsg']=False
+                        
                         f.write(str(full_child[0])+'->'+str(v)+' ')
+                        RNPC.edges[v, full_child[0]]['color']='red'
+                        RNPC.edges[v, full_child[0]]['width']=4
                     else:
                         max_msg = 0
                         child = full_child[0]
@@ -91,24 +110,48 @@ def scheduling(input_file_path):
                             msg_count = 0
                             if fc in bfs_nodes:
                                 for cc in bfs_nodes[fc]:
-                                    if RNPC.nodes[cc]['Bmsg']: 
-                                        msg_count += 1
+                                    if RNPC.nodes[cc]['Bmsg']:
+                                        if RNPC.nodes[cc]['type']=='S':
+                                            msg_count += RNPC.nodes[cc]['MsgCount']
+                                        else:
+                                            msg_count += 1
+                                    
                                     if cc in bfs_nodes:
-                                        for ccc in bfs_nodes[fc]:
-                                            if RNPC.nodes[ccc]['Bmsg']: 
-                                                msg_count += 1
+                                        for ccc in bfs_nodes[cc]:
+                                            if RNPC.nodes[ccc]['Bmsg']:
+                                                if RNPC.nodes[ccc]['type']=='S':
+                                                    msg_count += RNPC.nodes[ccc]['MsgCount']
+                                                else:
+                                                    msg_count += 1
                             
                             if msg_count> max_msg:
                                 child = fc
-                        
+                                max_msg = msg_count
+                       
                         RNPC.nodes[v]['Bmsg']=True
                         RNPC.nodes[v]['Rfree']=False
-                        RNPC.nodes[child]['Bmsg']=False
+                        if RNPC.nodes[v]['type']=='S':
+                            RNPC.nodes[v]['MsgCount']+=1
                         RNPC.nodes[child]['Rfree']=False
-                        f.write(str(child)+'->'+str(v)+' ')
+                        if RNPC.nodes[child]['type']=='S':
+                            RNPC.nodes[child]['MsgCount']-=1
+                            if RNPC.nodes[child]['MsgCount']==0:
+                                RNPC.nodes[child]['Bmsg']=False
+                        else:
+                            RNPC.nodes[child]['Bmsg']=False
+                        #RNPC.nodes[child]['Bmsg']=False
                         
+                        f.write(str(child)+'->'+str(v)+' ')
+                        RNPC.edges[v, child]['color']='red'
+                        RNPC.edges[v, child]['width']=4
+            
+            out_graph.add_edges_from(RNPC.edges(data=True))
+            pj.draw_schedule(out_graph, test_path+str(i+1)+'_'+str(l+1))
             for node in RNPC.nodes(data=True):
                 RNPC.nodes[node[0]]['Rfree']=True
+            
+            for edge in RNPC.edges(data=True):
+                RNPC.add_edge(edge[0], edge[1], color = 'black', width = 1)
                 
     f.close()
 

@@ -100,9 +100,45 @@ def draw_graph(graph, filename="graph.png"):
         elif type_map[n]=='BS':
             colour_map.append('blue')
         else:
-            colour_map.append('red')
+            colour_map.append('black')
     #print (colour_map)
     nx.draw(graph, pos= get_pos(graph), with_labels = True, node_color = colour_map)  
+    
+    bbox = {'ec':[1,1,1,0], 'fc':[0,1,1,0]}  # hack to label edges over line (rather than breaking up line)
+    edge_labels = nx.get_edge_attributes(graph, 'weight')
+    nx.draw_networkx_edge_labels(graph, pos=get_pos(graph), edge_labels=edge_labels, bbox=bbox)
+
+    #plt.axis('on')
+    #plt.grid('on')
+    plt.savefig(filename)
+    plt.show()
+    
+def draw_schedule(graph, filename="graph.png"):
+    plt.clf()
+    type_map=nx.get_node_attributes(graph, 'type')
+    bmsg = nx.get_node_attributes(graph, 'Bmsg')
+    ecol = nx.get_edge_attributes(graph, 'color')
+    ewid =nx.get_edge_attributes(graph, 'width')
+    colour_map=[]
+    for n in type_map: 
+        if bmsg[n]:
+            colour_map.append('red')
+        elif type_map[n]=='R':
+            colour_map.append('yellow')
+        elif type_map[n]=='S':
+            colour_map.append('green')
+        elif type_map[n]=='BS':
+            colour_map.append('blue')
+        else:
+            colour_map.append('black')
+        
+    ecolor = []
+    ewidth = []
+    for u,v in ecol:
+        ecolor.append(ecol[u,v])
+        ewidth.append(ewid[u,v])
+    #print (colour_map)
+    nx.draw(graph, pos= get_pos(graph), with_labels = True, node_color = colour_map, edge_color=ecolor, width = ewidth)  
     
     bbox = {'ec':[1,1,1,0], 'fc':[0,1,1,0]}  # hack to label edges over line (rather than breaking up line)
     edge_labels = nx.get_edge_attributes(graph, 'weight')

@@ -29,7 +29,7 @@ def remove_relay(graph):
     for node in graph.nodes(data=True):
         if node[1]['type']=='R':
 #            plt.figure(node[0])
-#            pj.draw_graph(reduced, "try/x_"+str(node[0]))
+#            pj.draw_graph(reduced, "relay_removal/x_"+str(node[0]))
             r_neighbour = [neighbour for relay, neighbour in reduced.edges(node[0])]
             for i in list(combinations(r_neighbour , 2)):
                 w1 = math.inf 
@@ -50,7 +50,7 @@ def min_tree(input_file_path):
     file = os.path.basename(input_file_path)
     file_name, file_type = file.split('_')
     out_file_path = os.path.join(file_dir, file_name)
-    test_path = os.path.join(file_dir, 'trial', 'try_')
+    test_path = os.path.join(file_dir, 'steps', 'try_')
     
     if file_type == 'pickle':
         G = pj.load_pickle(input_file_path)
@@ -60,7 +60,6 @@ def min_tree(input_file_path):
 #    plt.figure(1)
 #    pj.draw_graph(reduced_graph, out_file_path+"_terminals")
     fig = 1
-    plt.figure(fig)
     pj.draw_graph(reduced_graph, test_path+"terminal"+str(fig))
     fig+=1
     #terminals = reduced_graph.nodes()
@@ -99,7 +98,7 @@ def min_tree(input_file_path):
             Tree.add_edges_from(temprary.edges(data=True))
 #        plt.figure(2)
 #        pj.draw_graph(Tree, out_file_path+"_tree")
-        plt.figure(fig)
+        
         pj.draw_graph(Tree, test_path+"tree"+str(fig))
         fig+=1
         #updating reduced tree - removing unrequired edges
@@ -109,7 +108,7 @@ def min_tree(input_file_path):
                 reduced_graph.remove_edge(i[0], i[1])      
 #        plt.figure(1)
 #        pj.draw_graph(reduced_graph, out_file_path+"_terminals")
-        plt.figure(fig)
+        
         pj.draw_graph(reduced_graph, test_path+"terminal"+str(fig))
         fig+=1
         #UPDATES
@@ -172,7 +171,7 @@ def min_tree(input_file_path):
             
 #            plt.figure(2)
 #            pj.draw_graph(Tree, out_file_path+"_tree")
-            plt.figure(fig)
+            
             pj.draw_graph(Tree, test_path+"tree"+str(fig))
             fig+=1
             #updating reduced tree - removing unrequired edges
@@ -183,7 +182,7 @@ def min_tree(input_file_path):
                         reduced_graph.remove_edge(i, j)      
 #            plt.figure(1)
 #            pj.draw_graph(reduced_graph, out_file_path+"_terminals")
-            plt.figure(fig)
+            
             pj.draw_graph(reduced_graph, test_path+"terminal"+str(fig))
             fig+=1
             #updating branches, their loads and their components
@@ -237,6 +236,9 @@ def min_tree(input_file_path):
                              #TODO - replace with link weight
                              relay_set = relay_set|set(reduced_graph.edges[node, parent]['link'])
                              relay_count = len(relay_set-branches[branch]['nodes'])
+                             #case1 metric
+                             #metric = branches[branch]['load']+1+len(ss)+relay_count
+                             #case2 metric
                              metric = branches[branch]['load']+1+len(ss)
                              # checking if branches are fusing
                              relay_flag=0
@@ -260,7 +262,7 @@ def min_tree(input_file_path):
                     Tree.add_edges_from(temp.edges(data=True))
 #                plt.figure(2)
 #                pj.draw_graph(Tree, out_file_path+"_tree")
-                plt.figure(fig)
+                
                 pj.draw_graph(Tree, test_path+"tree"+str(fig))
                 fig+=1
                 #updating reduced tree - removing unrequired edges
@@ -281,7 +283,7 @@ def min_tree(input_file_path):
                             reduced_graph.remove_edge(n, p)
 #                plt.figure(1)
 #                pj.draw_graph(reduced_graph, out_file_path+"_terminals")
-                plt.figure(fig)
+                
                 pj.draw_graph(reduced_graph, test_path+"terminal"+str(fig))
                 fig+=1
                 
